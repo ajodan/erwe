@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>WEBSITE BLOK C TAMAN ALAMANDA</title>
+  <title>Website Blok C Taman Alamanda</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
