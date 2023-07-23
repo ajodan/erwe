@@ -6,3 +6,4 @@ deployment:
     - /bin/cp -R routes $DEPLOYPATH
     - /bin/cp -R resources $DEPLOYPATH
     - /bin/cp -R public $DEPLOYPATH
+    - /bin/cp .panel.yml $DEPLOYPATH
