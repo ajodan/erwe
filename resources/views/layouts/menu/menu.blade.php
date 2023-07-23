@@ -5,7 +5,8 @@
         <span></span>
         <span></span>
       </button>
-      <a class="navbar-brand text-brand" href="{{ route('/') }}">BLOKC<span class="color-b">TAMAN ALAMANDA</span></a>
+     
+      <a class="navbar-brand text-brand" href="{{ route('/') }}"> <img src="{{asset('assets/img/logo-rw-web.jpg')}}" alt="logo" width="150" class="rounded-square"> BLOKC<span class="color-b">&nbsp;TAMAN ALAMANDA</span></a>
 
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">

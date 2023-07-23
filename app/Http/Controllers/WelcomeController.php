@@ -33,13 +33,13 @@ class WelcomeController extends Controller
             ->where('artikels.is_publish', '=', '1')
             ->select('artikels.*', 'kategori_artikels.nama_kategori')
             ->orderby('artikels.created_at', 'desc')
-            ->limit(6)
+            ->limit(9)
             ->get();
         $galeris = Galeri::leftJoin('kategori_galeris', 'galeris.kategori_galeri_id', '=', 'kategori_galeris.id')
             ->where('galeris.is_publish', '=', '1')
             ->select('galeris.*', 'kategori_galeris.nama_kategori')
             ->orderby('galeris.created_at', 'desc')
-            ->limit(6)
+            ->limit(9)
             ->get();
         return view('welcome', compact('artikels', 'galeris'));
     }
