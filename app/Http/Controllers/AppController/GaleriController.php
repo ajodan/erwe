@@ -73,6 +73,7 @@ class GaleriController extends Controller
             $gambar->move(public_path('UploadedFile/gambarGaleri'), $filenameSimpan);
         }
         $d->created_by =  Auth::user()->name;
+        // $d->created_at =  date("Y/m/d H:i:s");
         $d->save();
 
         return redirect()->route("galeris.index")->with("alertStore", "....");
@@ -129,6 +130,7 @@ class GaleriController extends Controller
             $gambar->move(public_path('UploadedFile/gambarGaleri'), $filenameSimpan);
         }
         $d->created_by =  Auth::user()->name;
+        // $d->created_at =  date("Y/m/d H:i:s");
         $d->save();
 
         return redirect()->route("galeris.index")->with("alertUpdate", "....");

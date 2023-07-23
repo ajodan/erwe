@@ -77,6 +77,7 @@ class ArtikelController extends Controller
             $gambar->move(public_path('UploadedFile/gambarArtikel'), $filenameSimpan);
         }
         $d->created_by =  Auth::user()->name;
+        $d->created_at =  date("Y/m/d H:i:s");
         $d->save();
 
         return redirect()->route("artikels.index")->with("alertStore", "....");
@@ -139,6 +140,7 @@ class ArtikelController extends Controller
             $gambar->move(public_path('UploadedFile/gambarArtikel'), $filenameSimpan);
         }
         $d->created_by =  Auth::user()->name;
+        $d->created_at = date("Y/m/d H:i:s");
         $d->save();
 
         return redirect()->route("artikels.index")->with("alertUpdate", "....");
