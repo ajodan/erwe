@@ -53,9 +53,9 @@
                 <h2 class="title-a">Berita Terkini</h2>
               </div>
               <div class="title-link">
-                <a href="{{ route('berita') }}">Semua Berita
+                {{-- <a href="{{ route('berita') }}">Semua Berita
                   <span class="bi bi-chevron-right"></span>
-                </a>
+                </a> --}}
               </div>
             </div>
           </div>
@@ -124,9 +124,9 @@
                 <h2 class="title-a">Galeri</h2>
               </div>
               <div class="title-link">
-                <a href="{{ route('galeri')  }}">Semua Galeri
+                {{-- <a href="{{ route('galeri')  }}">Semua Galeri
                   <span class="bi bi-chevron-right"></span>
-                </a>
+                </a> --}}
               </div>
             </div>
           </div>
