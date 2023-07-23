@@ -25,12 +25,12 @@
               <a class="dropdown-item " href="{{ route('strukturrt4') }}">RT 04</a>
             </div>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link " href="{{ route('berita') }}">Berita</a>
           </li>
           <li class="nav-item">
             <a class="nav-link " href="{{ route('galeri') }}">Galeri</a>
-          </li>
+          </li> --}}
           {{-- <li class="nav-item">
             <a class="nav-link " href="blog-grid.html">Blog</a>
           </li> --}}
