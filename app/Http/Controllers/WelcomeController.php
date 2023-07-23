@@ -32,12 +32,14 @@ class WelcomeController extends Controller
         $artikels = Artikel::leftJoin('kategori_artikels', 'artikels.kategori_id', '=', 'kategori_artikels.id')
             ->where('artikels.is_publish', '=', '1')
             ->select('artikels.*', 'kategori_artikels.nama_kategori')
-            ->orderby('artikels.id', 'desc')
+            ->orderby('artikels.created_at', 'desc')
+            ->limit(6)
             ->get();
         $galeris = Galeri::leftJoin('kategori_galeris', 'galeris.kategori_galeri_id', '=', 'kategori_galeris.id')
             ->where('galeris.is_publish', '=', '1')
             ->select('galeris.*', 'kategori_galeris.nama_kategori')
-            ->orderby('galeris.id', 'desc')
+            ->orderby('galeris.created_at', 'desc')
+            ->limit(6)
             ->get();
         return view('welcome', compact('artikels', 'galeris'));
     }
