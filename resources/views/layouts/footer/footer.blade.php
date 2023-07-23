@@ -13,9 +13,9 @@
               <li class="list-inline-item">
                 <a class="nav-link active" href="{{ route('strukturrw') }}">Struktur Organisasi</a>
               </li>
-              <li class="list-inline-item">
+              {{-- <li class="list-inline-item">
                 <a class="nav-link active" href="{{ route('galeri') }}">Galeri</a>
-              </li>
+              </li> --}}
               <li class="list-inline-item">
                 <a class="nav-link active" href="{{ route('kontak') }}">Kontak</a>
               </li>
@@ -52,7 +52,7 @@
           <div class="copyright-footer">
             <p class="copyright color-text-a">
               &copy; Copyright
-              <span class="color-a">Eksel Corp</span> All Rights Reserved.
+              <span class="color-a">Bidang Teknologi Informasi</span> All Rights Reserved.
             </p>
           </div>
           <div class="credits">

@@ -13,9 +13,9 @@
           </div>
           <div class="w-footer-a">
             <ul class="list-unstyled">
-              <li class="color-a">
+              {{-- <li class="color-a">
                 <span class="color-text-a">Telepon Selular :</span> 081314408686
-              </li>
+              </li> --}}
               <li class="color-a">
                 <span class="color-text-a">Email :</span> sekretariatrw@gmail.com
               </li>
