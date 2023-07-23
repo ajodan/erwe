@@ -3,5 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/ajodanwe/public_html/erwe/
     - /bin/cp -R app $DEPLOYPATH
-    - /bin/cp -R routes $DEPLOYPATH
     - /bin/cp -R resources $DEPLOYPATH
