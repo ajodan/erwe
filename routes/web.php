@@ -72,7 +72,7 @@ Route::get('/home', function () {
     return redirect()->route("adminHome");
 })->name('home');
 
-Route::get('/detailartikel/{id}', 'WelcomeController@detail');
+Route::get('/detailartikel/{slug}', 'WelcomeController@detail');
 
 Route::group(["prefix" => "app", "middleware" => "auth.admin"], function () {
     Route::get('/home', 'HomeController@index')->name('adminHome');

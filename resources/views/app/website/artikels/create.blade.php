@@ -49,10 +49,22 @@
                             </div>
                         </div>
                         <div class="row">
-                        <div class="form-group col-md-12">
-                            <label>Deskripsi Artikel</label>*
-                            <textarea class="form-control rounded-0" name="deskripsi" id="deskripsi" rows="10" @error('deskripsi') is-invalid @enderror" value="{{ old('deskripsi') }}" required></textarea>
+                            <div class="form-group col-md-12">*
+                                <label>Slug</label>
+                                <input id="slug" type="hidden" class="form-control @error('slug') is-invalid @enderror" name="slug" value="{{ old('slug') }}">
+                            </div>
                         </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label>Isi Singkat Artikel</label>*
+                                <textarea class="form-control rounded-0" name="isi_singkat" id="isi_singkat" rows="5" @error('isi_singkat') is-invalid @enderror" value="{{ old('isi_singkat') }}" required></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label>Deskripsi Artikel</label>*
+                                <textarea class="form-control rounded-0" name="deskripsi" id="deskripsi" rows="10" @error('deskripsi') is-invalid @enderror" value="{{ old('deskripsi') }}" required></textarea>
+                            </div>
                         </div>
                         
                         <div class="row">

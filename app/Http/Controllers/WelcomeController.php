@@ -44,10 +44,17 @@ class WelcomeController extends Controller
         return view('welcome', compact('artikels', 'galeris'));
     }
 
-    public function detail($id)
+    public function detail($slug)
     {
 
-        $artikels = Artikel::find($id);
-        return view('detailartikel', compact('artikels'));
+        //$artikels = Artikel::find($slug);
+        $artikels = Artikel::where('slug', $slug)->first();
+        $artikellist = Artikel::leftJoin('kategori_artikels', 'artikels.kategori_id', '=', 'kategori_artikels.id')
+            ->where('artikels.is_publish', '=', '1')
+            ->select('artikels.*', 'kategori_artikels.nama_kategori')
+            // ->orderby('artikels.created_at', 'desc')
+            ->limit(6)
+            ->get();
+        return view('detailartikel', compact('artikels', 'artikellist'));
     }
 }

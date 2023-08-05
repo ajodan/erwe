@@ -39,7 +39,7 @@
             <a class="nav-link " href="{{ route('kontak') }}">Kontak</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="{{ route('login') }}">LOGIN</a>
+            <a class="nav-link " href="{{ route('login') }}">Login SIRuTe</a>
           </li>
         </ul>
       </div>

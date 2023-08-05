@@ -41,6 +41,10 @@
                         <input id="judul" type="text" class="form-control @error('judul') is-invalid @enderror" name="judul" value="{{ $artikels->judul }}" required autocomplete="judul" autofocus>
                     </div>
                     <div class="form-group col-md-12">
+                        <label>Isi Singkat Artikel</label>
+                        <textarea name="isi_singkat" id="isi_singkat" class="form-control">{{ $artikels->isi_singkat }}</textarea>
+                    </div>
+                    <div class="form-group col-md-12">
                         <label>Deskripsi Artikel</label>
                         <textarea name="deskripsi" id="deskripsi" class="form-control">{{ $artikels->deskripsi }}</textarea>
                     </div>

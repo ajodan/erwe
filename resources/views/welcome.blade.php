@@ -26,7 +26,7 @@
                       <span class="color-b">{{ $artikel->judul }}</span>
                     </h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">Baca Artikel</span></a>
+                      <a href="{{ '/detailartikel/'.$artikel->slug }}"><span class="price-a">Baca Artikel</span></a>
                     </p>
                   </div>
                 </div>
@@ -74,14 +74,14 @@
                   <div class="card-overlay-a-content">
                     <div class="card-header-a">
                       <h2 class="card-title-a">
-                        <a href="#">{{ $artikel->judul }}
+                        <a href="{{ '/detailartikel/'.$artikel->slug }}">{{ $artikel->judul }}
                       </h2>
                     </div>
                     <div class="card-body-a">
                       {{-- <div class="price-box d-flex">
                         <span class="price-a">rent | $ 12.000</span>
                       </div> --}}
-                      <a href="#" class="link-a">{{ $artikel->nama_kategori }}
+                      <a href="{{ '/detailartikel/'.$artikel->slug }}" class="link-a">{{ $artikel->nama_kategori }}
                         <span class="bi bi-chevron-right"></span>
                       </a>
                     </div>

@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Model\KategoriArtikel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Hash;
-use Str;
 use File;
 
 use\App\Model\Artikel;
@@ -56,16 +56,22 @@ class ArtikelController extends Controller
         $request->validate([
             'kategori_id'     => 'required',
             'judul'     => 'required',
+            'isi_singkat'     => 'required',
             'deskripsi'     => 'required',
+            //  'slug'          => 'required|min:3|max:255|unique:posts',
             'gambar' => 'required',
             'gambar.*' => 'mimes:PDF,pdf,jpg,jpeg,png|max:2000'
         ]);
+
+        // $request['slug'] = Str::slug($request['slug'], '-');
+
         $d = new Artikel;
         $d->kategori_id = $request->input('kategori_id');
         $d->judul = $request->input('judul');
+        $d->isi_singkat = $request->input('isi_singkat');
         $d->deskripsi = $request->input('deskripsi');
         $d->is_publish = $request->input('is_publish');
-        // $d->gambar = $request->input('gambar');
+        $d->slug = Str::slug($request['judul']);
         $gambar = $request->file('gambar');
 
         if (!empty($gambar)) {
@@ -120,6 +126,7 @@ class ArtikelController extends Controller
         $d = Artikel::find($id);
         $d->kategori_id = $request->input('kategori_id');
         $d->judul = $request->input('judul');
+        $d->isi_singkat = $request->input('isi_singkat');
         $d->deskripsi = $request->input('deskripsi');
         $d->is_publish = $request->input('is_publish');
         // $gambar = $request->file('gambar');

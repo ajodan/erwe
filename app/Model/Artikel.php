@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Artikel extends Model
 {
     protected $primaryKey = 'id';
+    protected $fillable = ['slug'];
     public $timestamps = false;
 
     public function Kategori()
