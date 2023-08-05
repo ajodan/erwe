@@ -129,6 +129,7 @@ class ArtikelController extends Controller
         $d->isi_singkat = $request->input('isi_singkat');
         $d->deskripsi = $request->input('deskripsi');
         $d->is_publish = $request->input('is_publish');
+        $d->slug = Str::slug($request['judul']);
         // $gambar = $request->file('gambar');
         // if (!empty($gambar)) {
         //     $d->gambar = $gambar->getClientOriginalName();
