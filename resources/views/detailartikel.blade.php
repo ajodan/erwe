@@ -66,7 +66,7 @@
           <br><br> 
             <div class="post-content color-text-a">
               <div style="text-align:justify;">
-              <p class="post-intro">
+              <p class="">
                {{ $artikels->isi_singkat }}
               </p>
               </div>
