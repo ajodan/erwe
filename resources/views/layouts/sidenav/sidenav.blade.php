@@ -23,7 +23,14 @@
                     <li id="administratorsLink"><a class="nav-link" href="{{ route('administrators.index') }}">Administrators</a></li>
                 </ul>
             </li>
-            
+            <li class="dropdown" id="dataDiriLink">
+                <a href="{{ route('data_diris.index') }}" class="nav-link">
+                    <i class="fas fa-address-card"></i> <span>Data Warga</span>
+                </a>
+                <a href="{{ route('data_keluargas.index') }}" class="nav-link">
+                    <i class="fas fa-address-card"></i> <span>Data Keluarga</span>
+                </a>
+            </li>
             <li class="dropdown" id="statusLink">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-align-justify"></i> <span>Referensi</span></a>
                 <ul class="dropdown-menu">

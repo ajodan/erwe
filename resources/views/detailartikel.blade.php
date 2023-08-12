@@ -2,7 +2,7 @@
 <style>
   body {
     margin: 20px;
-    text-align: center;
+    text-align: left;
   }
 
   h1 {
@@ -96,11 +96,6 @@
                       <i class="bi bi-instagram" aria-hidden="true"></i>
                     </a>
                   </li>
-                  <li class="list-inline-item">
-                    <a href="#">
-                      <i class="bi bi-linkedin" aria-hidden="true"></i>
-                    </a>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -109,7 +104,9 @@
           <div class="col-md-12 col-lg-3">
                 @foreach($artikellist as $list)
                 <div style="text-align:top;">
-                  <a href="{{ '/detailartikel/'.$list->slug }}"><img src="{{ asset('UploadedFile/gambarArtikel/'.$list->gambar) }}" height="70" width="80" alt="{{ $list->judul }}">
+                  
+                  <a href="{{ '/detailartikel/'.$list->slug }}"><img src="{{ asset('UploadedFile/gambarArtikel/'.$list->gambar) }}" height="100" width="120" alt="{{ $list->judul }}">
+                    <p>{{ $list->created_at }}</p>
                     <p>{{ $list->judul }}<a></p>
                 </div>
                 
