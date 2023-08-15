@@ -26,6 +26,15 @@
               <a class="dropdown-item " href="{{ route('strukturrt4') }}">RT 04</a>
             </div>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data Statistik</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item " href="{{ route('datawilayah') }}">Data Wilayah</a>
+              <a class="dropdown-item " href="{{ route('datakk') }}">Data Kepala Keluarga</a>
+              <a class="dropdown-item " href="{{ route('datajeniskelamin') }}">Data Jenis Kelamin</a>
+             
+            </div>
+          </li>
           {{-- <li class="nav-item">
             <a class="nav-link " href="{{ route('berita') }}">Berita</a>
           </li>
@@ -39,7 +48,7 @@
             <a class="nav-link " href="{{ route('kontak') }}">Kontak</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="{{ route('login') }}">Login SIRuTe</a>
+            <a class="nav-link " href="{{ route('login') }}">Login</a>
           </li>
         </ul>
       </div>

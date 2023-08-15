@@ -29,33 +29,33 @@
                                 </tr>
                                 <tr>
                                     <th>Laki-Laki</th>
-                                    <th class="text-center">{{ $data_rt1->where("jenis_kelamin", "Laki-Laki")->count() }}</th>
-                                    <th class="text-center">{{ $data_rt2->where("jenis_kelamin", "Laki-Laki")->count() }}</th>
-                                    <th class="text-center">{{ $data_rt3->where("jenis_kelamin", "Laki-Laki")->count() }}</th>
-                                    <th class="text-center">{{ $data_rt4->where("jenis_kelamin", "Laki-Laki")->count() }}</th>
+                                    <th class="text-center">{{ $data_rt1_laki->jumlah }}</th>
+                                    <th class="text-center">{{ $data_rt2_laki->jumlah }}</th>
+                                    <th class="text-center">{{ $data_rt3_laki->jumlah }}</th>
+                                    <th class="text-center">{{ $data_rt4_laki->jumlah }}</th>
                                     <?php 
-                                    $jmlLaki = $data_rt1->where("jenis_kelamin", "Laki-Laki")->count() + $data_rt2->where("jenis_kelamin", "Laki-Laki")->count() + $data_rt3->where("jenis_kelamin", "Laki-Laki")->count() + $data_rt4->where("jenis_kelamin", "Laki-Laki")->count();
+                                    $jmlLaki = $data_rt1_laki->jumlah + $data_rt2_laki->jumlah + $data_rt3_laki->jumlah + $data_rt4_laki->jumlah;
                                     ?>
                                     <th class="text-center">{{ $jmlLaki }}</th>
                                 </tr>
                                 <tr>
                                     <th>Perempuan</th>
-                                    <th class="text-center">{{ $data_rt1->where("jenis_kelamin", "Perempuan")->count() }}</th>
-                                    <th class="text-center">{{ $data_rt2->where("jenis_kelamin", "Perempuan")->count() }}</th>
-                                    <th class="text-center">{{ $data_rt3->where("jenis_kelamin", "Perempuan")->count() }}</th>
-                                    <th class="text-center">{{ $data_rt4->where("jenis_kelamin", "Perempuan")->count() }}</th>
+                                    <th class="text-center">{{ $data_rt1_perempuan->jumlah }}</th>
+                                    <th class="text-center">{{ $data_rt2_perempuan->jumlah }}</th>
+                                    <th class="text-center">{{ $data_rt3_perempuan->jumlah }}</th>
+                                    <th class="text-center">{{ $data_rt4_perempuan->jumlah }}</th>
                                     <?php 
-                                    $jmlPerempuan = $data_rt1->where("jenis_kelamin", "Perempuan")->count() + $data_rt2->where("jenis_kelamin", "Perempuan")->count() + $data_rt3->where("jenis_kelamin", "Perempuan")->count() + $data_rt4->where("jenis_kelamin", "Perempuan")->count();
+                                    $jmlPerempuan = $data_rt1_perempuan->jumlah + $data_rt2_perempuan->jumlah + $data_rt3_perempuan->jumlah + $data_rt4_perempuan->jumlah;
                                     ?>
                                     <th class="text-center">{{ $jmlPerempuan }}</th>
                                 </tr>
                                
                                 <tr>
                                     <th><b>Jumlah Keseluruhan</b></th>
-                                    <th class="text-center"><b>{{ $data_rt1->where("jenis_kelamin", "Laki-Laki")->count() + $data_rt1->where("jenis_kelamin", "Perempuan")->count() }}</b></th>
-                                    <th class="text-center"><b>{{ $data_rt2->where("jenis_kelamin", "Laki-Laki")->count() + $data_rt2->where("jenis_kelamin", "Perempuan")->count() }}</b></th>
-                                    <th class="text-center"><b>{{ $data_rt3->where("jenis_kelamin", "Laki-Laki")->count() + $data_rt3->where("jenis_kelamin", "Perempuan")->count() }}</b></th>
-                                    <th class="text-center"><b>{{ $data_rt4->where("jenis_kelamin", "Laki-Laki")->count() + $data_rt4->where("jenis_kelamin", "Perempuan")->count() }}</b></th>
+                                    <th class="text-center"><b>{{ $data_rt1_laki->jumlah + $data_rt1_perempuan->jumlah }}</b></th>
+                                    <th class="text-center"><b>{{ $data_rt2_laki->jumlah + $data_rt2_perempuan->jumlah }}</b></th>
+                                    <th class="text-center"><b>{{ $data_rt3_laki->jumlah + $data_rt3_perempuan->jumlah }}</b></th>
+                                    <th class="text-center"><b>{{ $data_rt4_laki->jumlah + $data_rt4_perempuan->jumlah }}</b></th>
                                     <th class="text-center"><b>{{ $jmlLaki+$jmlPerempuan }}</b></th>
 
                           
@@ -80,6 +80,10 @@
             </div>
         </div>
     </section>
+    <h4 class="header-title" align="center">Jumlah Warga Jenis Kelamin Laki-Laki Berdasarkan RT</h4>
+    <canvas id="lakiChart" class="chartjs" width="undefined" height="undefined"></canvas><br><br>
+    <h4 class="header-title" align="center">Jumlah Warga Jenis Kelamin Perempuan Berdasarkan RT</h4>
+    <canvas id="perempuanChart" class="chartjs" width="undefined" height="undefined"></canvas>
 </div>
 @endsection
 
@@ -104,7 +108,67 @@
 
     $('#imageDataDiri')
 </script>
+<script type="text/javascript">
+    var ctx = document.getElementById("lakiChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: <?php echo json_encode($label); ?>,
+        datasets: [{
+        label: 'Jumlah Warga',
+        // backgroundColor: '#54cb6a',
+        backgroundColor: [
+            'rgba(75, 192, 192, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(153, 243, 255, 0.2)',
+      'rgba(201, 255, 207, 0.2)'
+    ],
+        borderColor: '#93C3D2',
+        data: <?php echo json_encode($jumlah_laki); ?>
+        }],
+        options: {
+    animation: {
+        onProgress: function(animation) {
+            progress.value = animation.animationObject.currentStep / animation.animationObject.numSteps;
+        }
+      }
+    }
+   },
+ });
+</script>
 
+<script type="text/javascript">
+    var ctx = document.getElementById("perempuanChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: <?php echo json_encode($label); ?>,
+        datasets: [{
+        label: 'Jumlah Warga',
+        // backgroundColor: '#cb547a',
+        backgroundColor: [
+            'rgba(75, 192, 192, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(153, 243, 255, 0.2)',
+      'rgba(201, 255, 207, 0.2)'
+    ],
+        borderColor: '#93C3D2',
+        barPercentage: 0.5,
+        barThickness: 6,
+        maxBarThickness: 8,
+        minBarLength: 2,
+        data: <?php echo json_encode($jumlah_perempuan); ?>
+        }],
+        options: {
+    animation: {
+        onProgress: function(animation) {
+            progress.value = animation.animationObject.currentStep / animation.animationObject.numSteps;
+        }
+      }
+    }
+   },
+ });
+</script>
 
 @include('layouts.alerts.notif')
 @endsection

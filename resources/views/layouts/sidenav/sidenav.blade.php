@@ -74,6 +74,15 @@
                 </a>
             </li>
             <li class="dropdown" id="statusLink">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-align-justify"></i> <span>Website</span></a>
+                <ul class="dropdown-menu">
+                    <li id="agamaLink"><a class="nav-link" href="{{ route('agamas.index') }}">Pengurus</a></li>
+                    <li id="artikelLink"><a class="nav-link" href="{{ route('artikels.index') }}">Artikel</a></li>
+                    <li id="galeriLink"><a class="nav-link" href="{{ route('galeris.index') }}">Galeri</a></li>
+                    <li id="cacatLink"><a class="nav-link" href="{{ route('cacats.index') }}">Agenda</a></li>
+                </ul>
+            </li>
+            <li class="dropdown" id="statusLink">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-align-justify"></i> <span>Rekapitulasi</span></a>
                 <ul class="dropdown-menu">
                     <li id="wargaLink"><a class="nav-link" href="{{ route('rekap_wargas.index') }}">Data Warga</a></li>
@@ -86,6 +95,7 @@
                     <li id="usiaLink"><a class="nav-link" href="{{ route('rekap_kelompok_usias.index') }}">Data Kelompok Usia</a></li>
                   </ul>
             </li>
+
             @endif
             @if (auth()->user()->level == 'Sekretaris')
             <li class="dropdown" id="dataDiriLink">

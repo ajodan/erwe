@@ -47,6 +47,20 @@ Route::get('/strukturrt4', function () {
     return view('strukturrt4');
 })->name('strukturrt4');
 
+// statistik
+Route::get('/datawilayah', 'DataWilayahController@index', function () {
+    return view('datawilayah');
+})->name('datawilayah');
+
+Route::get('/datakk', 'DataKkController@index', function () {
+    return view('datakk');
+})->name('datakk');
+
+Route::get('/datajeniskelamin', 'DataJenisKelaminController@index', function () {
+    return view('datajeniskelamin');
+})->name('datajeniskelamin');
+
+
 Route::get('/layanan', function () {
     return view('layanan');
 })->name('layanan');

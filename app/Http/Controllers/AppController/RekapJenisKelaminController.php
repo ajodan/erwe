@@ -4,6 +4,7 @@ namespace App\Http\Controllers\AppController;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use Hash;
 use Str;
@@ -33,6 +34,41 @@ class RekapJenisKelaminController extends Controller
             ->where('status_dasar', "hidup")
             ->get();
 
-        return view('app.laporan.laporanJenisKelamins', $d);
+        $data_rt1_laki = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and jenis_kelamin='Laki-Laki' and status_dasar='hidup'"))->first();
+        $data_rt2_laki = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and jenis_kelamin='Laki-Laki' and status_dasar='hidup'"))->first();
+        $data_rt3_laki = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and jenis_kelamin='Laki-Laki' and status_dasar='hidup'"))->first();
+        $data_rt4_laki = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and jenis_kelamin='Laki-Laki' and status_dasar='hidup'"))->first();
+
+        $data_rt1_perempuan = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and jenis_kelamin='Perempuan' and status_dasar='hidup'"))->first();
+        $data_rt2_perempuan = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and jenis_kelamin='Perempuan' and status_dasar='hidup'"))->first();
+        $data_rt3_perempuan = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and jenis_kelamin='Perempuan' and status_dasar='hidup'"))->first();
+        $data_rt4_perempuan = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and jenis_kelamin='Perempuan' and status_dasar='hidup'"))->first();
+
+        $label = ["RT 01", "RT 02", "RT 03", "RT 04"];
+
+        for ($rt = 1; $rt < 5; $rt++) {
+            $chart_laki     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and jenis_kelamin='Laki-Laki' and status_dasar='hidup'"))->first();
+            $jumlah_laki[] = $chart_laki->jumlah;
+        }
+
+        for ($rt = 1; $rt < 5; $rt++) {
+            $chart_perempuan     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and jenis_kelamin='Perempuan' and status_dasar='hidup'"))->first();
+            $jumlah_perempuan[] = $chart_perempuan->jumlah;
+        }
+
+        // return view('app.laporan.laporanJenisKelamins', $d);
+        return view('app.laporan.laporanJenisKelamins', compact(
+            'data_rt1_laki',
+            'data_rt2_laki',
+            'data_rt3_laki',
+            'data_rt4_laki',
+            'data_rt1_perempuan',
+            'data_rt2_perempuan',
+            'data_rt3_perempuan',
+            'data_rt4_perempuan',
+            'jumlah_laki',
+            'jumlah_perempuan',
+            'label'
+        ));
     }
 }

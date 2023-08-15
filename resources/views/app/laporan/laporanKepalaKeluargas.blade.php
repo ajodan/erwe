@@ -25,23 +25,23 @@
                                 </tr>
                                 <tr>
                                     <th>Rukun Tetangga (RT) 01</th>
-                                    <th class="text-left">{{ $data_rt1->where("kk_id", 1)->count() }}</th>
+                                    <th class="text-left">{{ $data_rt1->jumlah }}</th>
                                 </tr>
                                 <tr>
                                     <th>Rukun Tetangga (RT) 02</th>
-                                    <th class="text-left">{{ $data_rt2->where("kk_id", 1)->count() }}</th>
+                                    <th class="text-left">{{ $data_rt2->jumlah }}</th>
                                 </tr>
                                 <tr>
                                     <th>Rukun Tetangga (RT) 03</th>
-                                    <th class="text-left">{{ $data_rt3->where("kk_id", 1)->count() }}</th>
+                                    <th class="text-left">{{ $data_rt3->jumlah }}</th>
                                 </tr>
                                 <tr>
                                     <th>Rukun Tetangga (RT) 04</th>
-                                    <th class="text-left">{{ $data_rt4->where("kk_id", 1)->count() }}</th>
+                                    <th class="text-left">{{ $data_rt4->jumlah }}</th>
                                 </tr>
                                 <tr>
-                                    <th><b>Jumlah Keseluruhan Kepala Keluarga</b></th>
-                                    <th class="text-left"><b>{{ $data_rt1->where("kk_id", 1)->count() + $data_rt2->where("kk_id", 1)->count() + $data_rt3->where("kk_id", 1)->count() + $data_rt4->where("kk_id", 1)->count() }}</b></th>
+                                    <th><b>Jumlah Kepala Keluarga</b></th>
+                                    <th class="text-left"><b>{{ $data_rt1->jumlah + $data_rt2->jumlah + $data_rt3->jumlah + $data_rt4->jumlah }}</b></th>
                                 </tr>
                             </table>
                         </div>
@@ -63,6 +63,8 @@
             </div>
         </div>
     </section>
+    <h4 class="header-title" align="center">Jumlah Kepala Keluarga Berdasarkan RT</h4>
+    <canvas id="mataChart" class="chartjs" width="undefined" height="undefined"></canvas>
 </div>
 @endsection
 
@@ -87,7 +89,28 @@
 
     $('#imageDataDiri')
 </script>
-
+<script type="text/javascript">
+    var ctx = document.getElementById("mataChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: <?php echo json_encode($label); ?>,
+        datasets: [{
+        label: 'Jumlah Kepala Keluarga',
+        backgroundColor:  'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgb(54, 162, 235)',
+        data: <?php echo json_encode($jumlah_kk); ?>
+        }],
+        options: {
+    animation: {
+        onProgress: function(animation) {
+            progress.value = animation.animationObject.currentStep / animation.animationObject.numSteps;
+        }
+      }
+    }
+   },
+ });
+</script>
 
 @include('layouts.alerts.notif')
 @endsection
