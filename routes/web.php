@@ -60,6 +60,10 @@ Route::get('/datajeniskelamin', 'DataJenisKelaminController@index', function () 
     return view('datajeniskelamin');
 })->name('datajeniskelamin');
 
+Route::get('/dataagama', 'DataAgamaController@index', function () {
+    return view('dataagama');
+})->name('dataagama');
+
 
 Route::get('/layanan', function () {
     return view('layanan');
