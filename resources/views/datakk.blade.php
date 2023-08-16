@@ -17,7 +17,7 @@
         <div class="row">
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
-              <h1 class="title-single">Data Statistik Kartu Keluarga RW 13</h1>
+              <h1 class="title-single">Data Statistik Kepala Keluarga RW 13</h1>
               <span class="color-text-a">Blok C Taman Alamanda, Karangsatria, Tambun Utara</span>
             </div>
           </div>
