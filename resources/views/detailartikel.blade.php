@@ -105,7 +105,7 @@
                 @foreach($artikellist as $list)
                 <div style="text-align:top;">
                   
-                  <a href="{{ '/detailartikel/'.$list->slug }}"><img src="{{ asset('UploadedFile/gambarArtikel/'.$list->gambar) }}" height="100" width="120" alt="{{ $list->judul }}">
+                  <a href="{{ '/detailartikel/'.$list->slug }}"><img src="{{ asset('UploadedFile/gambarArtikel/'.$list->gambar) }}" height="80" width="80" alt="{{ $list->judul }}">
                     <p>{{ $list->created_at }}</p>
                     <p>{{ $list->judul }}<a></p>
                 </div>
