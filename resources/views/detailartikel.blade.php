@@ -62,7 +62,7 @@
             </div>
           </div>
           <div class="col-md-10 offset-md-0 col-lg-9 offset-lg-0">
-            <img src="{{ asset('UploadedFile/gambarArtikel/'.$artikels->gambar) }}" class="css-class" height="800" width="965" alt="{{ $artikels->judul }}">
+            <img src="{{ asset('UploadedFile/gambarArtikel/'.$artikels->gambar) }}" class="css-class" height="800" width="800" alt="{{ $artikels->judul }}">
           <br><br> 
             <div class="post-content color-text-a">
               <div style="text-align:justify;">
