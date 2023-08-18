@@ -21,18 +21,18 @@ class RekapJenisKelaminController extends Controller
      */
     public function index(Request $request)
     {
-        $d['data_rt1'] = DataDiri::where('rt', 1)
-            ->where('status_dasar', "hidup")
-            ->get();
-        $d['data_rt2'] = DataDiri::where('rt', 2)
-            ->where('status_dasar', "hidup")
-            ->get();
-        $d['data_rt3'] = DataDiri::where('rt', 3)
-            ->where('status_dasar', "hidup")
-            ->get();
-        $d['data_rt4'] = DataDiri::where('rt', 4)
-            ->where('status_dasar', "hidup")
-            ->get();
+        // $d['data_rt1'] = DataDiri::where('rt', 1)
+        //     ->where('status_dasar', "hidup")
+        //     ->get();
+        // $d['data_rt2'] = DataDiri::where('rt', 2)
+        //     ->where('status_dasar', "hidup")
+        //     ->get();
+        // $d['data_rt3'] = DataDiri::where('rt', 3)
+        //     ->where('status_dasar', "hidup")
+        //     ->get();
+        // $d['data_rt4'] = DataDiri::where('rt', 4)
+        //     ->where('status_dasar', "hidup")
+        //     ->get();
 
         $data_rt1_laki = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and jenis_kelamin='Laki-Laki' and status_dasar='hidup'"))->first();
         $data_rt2_laki = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and jenis_kelamin='Laki-Laki' and status_dasar='hidup'"))->first();

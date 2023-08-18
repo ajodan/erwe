@@ -33,6 +33,7 @@
               <a class="dropdown-item " href="{{ route('datakk') }}">Data Kepala Keluarga</a>
               <a class="dropdown-item " href="{{ route('datajeniskelamin') }}">Data Jenis Kelamin</a>
               <a class="dropdown-item " href="{{ route('dataagama') }}">Data Agama</a>
+              <a class="dropdown-item " href="{{ route('datapendidikan') }}">Data Pendidikan</a>
              
             </div>
           </li>

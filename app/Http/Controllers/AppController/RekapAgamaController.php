@@ -21,18 +21,18 @@ class RekapAgamaController extends Controller
      */
     public function index(Request $request)
     {
-        $data_rt1 = DataDiri::where('rt', 1)
-            ->where('status_dasar', "hidup")
-            ->get();
-        $data_rt2 = DataDiri::where('rt', 2)
-            ->where('status_dasar', "hidup")
-            ->get();
-        $data_rt3 = DataDiri::where('rt', 3)
-            ->where('status_dasar', "hidup")
-            ->get();
-        $data_rt4 = DataDiri::where('rt', 4)
-            ->where('status_dasar', "hidup")
-            ->get();
+        // $data_rt1 = DataDiri::where('rt', 1)
+        //     ->where('status_dasar', "hidup")
+        //     ->get();
+        // $data_rt2 = DataDiri::where('rt', 2)
+        //     ->where('status_dasar', "hidup")
+        //     ->get();
+        // $data_rt3 = DataDiri::where('rt', 3)
+        //     ->where('status_dasar', "hidup")
+        //     ->get();
+        // $data_rt4 = DataDiri::where('rt', 4)
+        //     ->where('status_dasar', "hidup")
+        //     ->get();
 
 
         $data_rt1_islam = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and agama_id='1' and status_dasar='hidup'"))->first();
