@@ -68,6 +68,10 @@ Route::get('/datapendidikan', 'DataPendidikanController@index', function () {
     return view('datapendidikan');
 })->name('datapendidikan');
 
+Route::get('/datadomisili', 'DataDomisiliController@index', function () {
+    return view('datadomisili');
+})->name('datadomisili');
+
 
 Route::get('/layanan', function () {
     return view('layanan');

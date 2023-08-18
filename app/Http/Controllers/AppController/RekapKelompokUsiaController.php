@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Hash;
 use Str;
 
-use\App\Model\Datadiri;
+use App\Model\Datadiri;
 
 
 class RekapKelompokUsiaController extends Controller

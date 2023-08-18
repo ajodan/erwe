@@ -211,13 +211,7 @@
             labels: <?php echo json_encode($label); ?>,
         datasets: [{
         label: 'Jumlah Warga',
-        // backgroundColor: '#54cb6a',
-        backgroundColor: [
-        'rgba(75, 192, 192, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(153, 243, 255, 0.2)',
-      'rgba(255, 205, 86, 0.2)'
-    ],
+        backgroundColor: '#54cb6a',
         borderColor: '#93C3D2',
         data: <?php echo json_encode($jumlah_ts); ?>
         }],
@@ -239,13 +233,7 @@
             labels: <?php echo json_encode($label); ?>,
         datasets: [{
         label: 'Jumlah Warga',
-        // backgroundColor: '#54cb6a',
-        backgroundColor: [
-        'rgba(75, 192, 192, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(153, 243, 255, 0.2)',
-      'rgba(255, 205, 86, 0.2)'
-    ],
+        backgroundColor: '#54cb6a',
         borderColor: '#93C3D2',
         data: <?php echo json_encode($jumlah_blmtsd); ?>
         }],
@@ -267,13 +255,7 @@
             labels: <?php echo json_encode($label); ?>,
         datasets: [{
         label: 'Jumlah Warga',
-        // backgroundColor: '#54cb6a',
-        backgroundColor: [
-        'rgba(75, 192, 192, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(153, 243, 255, 0.2)',
-      'rgba(255, 205, 86, 0.2)'
-    ],
+        backgroundColor: '#54cb6a',
         borderColor: '#93C3D2',
         data: <?php echo json_encode($jumlah_sd); ?>
         }],
@@ -295,13 +277,7 @@
             labels: <?php echo json_encode($label); ?>,
         datasets: [{
         label: 'Jumlah Warga',
-        // backgroundColor: '#54cb6a',
-        backgroundColor: [
-        'rgba(75, 192, 192, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(153, 243, 255, 0.2)',
-      'rgba(255, 205, 86, 0.2)'
-    ],
+        backgroundColor: '#54cb6a',
         borderColor: '#93C3D2',
         data: <?php echo json_encode($jumlah_smp); ?>
         }],
@@ -323,13 +299,7 @@
             labels: <?php echo json_encode($label); ?>,
         datasets: [{
         label: 'Jumlah Warga',
-        // backgroundColor: '#54cb6a',
-        backgroundColor: [
-        'rgba(75, 192, 192, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(153, 243, 255, 0.2)',
-      'rgba(255, 205, 86, 0.2)'
-    ],
+        backgroundColor: '#54cb6a',
         borderColor: '#93C3D2',
         data: <?php echo json_encode($jumlah_sma); ?>
         }],
@@ -351,13 +321,7 @@
             labels: <?php echo json_encode($label); ?>,
         datasets: [{
         label: 'Jumlah Warga',
-        // backgroundColor: '#54cb6a',
-        backgroundColor: [
-        'rgba(75, 192, 192, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(153, 243, 255, 0.2)',
-      'rgba(255, 205, 86, 0.2)'
-    ],
+        backgroundColor: '#54cb6a',
         borderColor: '#93C3D2',
         data: <?php echo json_encode($jumlah_d1); ?>
         }],
@@ -379,13 +343,7 @@
             labels: <?php echo json_encode($label); ?>,
         datasets: [{
         label: 'Jumlah Warga',
-        // backgroundColor: '#54cb6a',
-        backgroundColor: [
-        'rgba(75, 192, 192, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(153, 243, 255, 0.2)',
-      'rgba(255, 205, 86, 0.2)'
-    ],
+        backgroundColor: '#54cb6a',
         borderColor: '#93C3D2',
         data: <?php echo json_encode($jumlah_d3); ?>
         }],
@@ -407,13 +365,7 @@
             labels: <?php echo json_encode($label); ?>,
         datasets: [{
         label: 'Jumlah Warga',
-        // backgroundColor: '#54cb6a',
-        backgroundColor: [
-        'rgba(75, 192, 192, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(153, 243, 255, 0.2)',
-      'rgba(255, 205, 86, 0.2)'
-    ],
+        backgroundColor: '#54cb6a',
         borderColor: '#93C3D2',
         data: <?php echo json_encode($jumlah_s1); ?>
         }],
@@ -435,13 +387,7 @@
             labels: <?php echo json_encode($label); ?>,
         datasets: [{
         label: 'Jumlah Warga',
-        // backgroundColor: '#54cb6a',
-        backgroundColor: [
-        'rgba(75, 192, 192, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(153, 243, 255, 0.2)',
-      'rgba(255, 205, 86, 0.2)'
-    ],
+        backgroundColor: '#54cb6a',
         borderColor: '#93C3D2',
         data: <?php echo json_encode($jumlah_s2); ?>
         }],
