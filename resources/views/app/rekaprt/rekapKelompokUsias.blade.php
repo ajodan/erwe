@@ -185,10 +185,7 @@
                                 </tr>
                                 <tr>
                                     <th><b>Jumlah Keseluruhan</b></th>
-                                    {{-- <?php 
-                                    $jmlRT = ;
-                                    ?>
-                                    <th class="text-center">{{ $jmlRT }}</th> --}}
+                                    
                                     <th class="text-center"><b>{{ $rtbalita+$rtkanak+$rtRAwal+$rtRAkhir+$rtDAwal+$rtDAkhir+$rtLansiaAwal+$rtLansiaAkhir+$rtManula }}</b></th>
 
                           

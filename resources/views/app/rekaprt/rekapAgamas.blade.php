@@ -25,35 +25,35 @@
                                 </tr>
                                 <tr>
                                     <th>Islam</th>
-                                    <th class="text-center">{{ $data_rt->where("agama_id", "1")->count() }}</th>
+                                    <th class="text-center">{{ $data_islam->jumlah }}</th>
                                 </tr>
                                 <tr>
                                     <th>Kristen</th>
-                                    <th class="text-center">{{ $data_rt->where("agama_id", "2")->count() }}</th>
+                                    <th class="text-center">{{ $data_kristen->jumlah }}</th>
                                 </tr>
                                 <tr>
                                     <th>Katholik</th>
-                                    <th class="text-center">{{ $data_rt->where("agama_id", "3")->count() }}</th>
+                                    <th class="text-center">{{ $data_katholik->jumlah }}</th>
                                 </tr>
                                 <tr>
                                     <th>Hindu</th>
-                                    <th class="text-center">{{ $data_rt->where("agama_id", "4")->count() }}</th>
+                                    <th class="text-center">{{ $data_hindu->jumlah }}</th>
                                 </tr>
                                 <tr>
                                     <th>Budha</th>
-                                    <th class="text-center">{{ $data_rt->where("agama_id", "5")->count() }}</th>
+                                    <th class="text-center">{{ $data_budha->jumlah }}</th>
                                 </tr>
                                 <tr>
                                     <th>Konghucu</th>
-                                    <th class="text-center">{{ $data_rt->where("agama_id", "6")->count() }}</th>
+                                    <th class="text-center">{{ $data_konghucu->jumlah }}</th>
                                 </tr>
                                 <tr>
                                     <th>Kepercayaan</th>
-                                    <th class="text-center">{{ $data_rt->where("agama_id", "7")->count() }}</th>
+                                    <th class="text-center">{{ $data_kepercayaan->jumlah }}</th>
                                 </tr>
                                 <tr>
                                     <th><b>Jumlah Keseluruhan</b></th>
-                                    <th class="text-center"><b>{{ $data_rt->where("agama_id", "1")->count() + $data_rt->where("agama_id", "2")->count() + $data_rt->where("agama_id", "3")->count() + $data_rt->where("agama_id", "4")->count() + $data_rt->where("agama_id", "5")->count() + $data_rt->where("agama_id", "6")->count() + $data_rt->where("agama_id", "7")->count() }}</b></th>
+                                    <th class="text-center"><b>{{ $data_islam->jumlah + $data_kristen->jumlah + $data_katholik->jumlah + $data_hindu->jumlah + $data_budha->jumlah + $data_konghucu->jumlah + $data_kepercayaan->jumlah }}</b></th>
                                 </tr>
                             </table>
                         </div>
@@ -75,6 +75,8 @@
             </div>
         </div>
     </section>
+    <h4 class="header-title" align="center">Jumlah Warga Menurut Agama</h4>
+    <canvas id="agamaChart" class="chartjs" width="undefined" height="undefined"></canvas><br><br>
 </div>
 @endsection
 
@@ -99,7 +101,28 @@
 
     $('#imageDataDiri')
 </script>
-
+<script type="text/javascript">
+    var ctx = document.getElementById("agamaChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: <?php echo json_encode($label); ?>,
+        datasets: [{
+        label: 'Jumlah Warga',
+        backgroundColor: '#12ad6a',
+        borderColor: '#93C3D2',
+        data: <?php echo json_encode($jumlah_agama); ?>
+        }],
+        options: {
+    animation: {
+        onProgress: function(animation) {
+            progress.value = animation.animationObject.currentStep / animation.animationObject.numSteps;
+        }
+      }
+    }
+   },
+ });
+</script>
 
 @include('layouts.alerts.notif')
 @endsection

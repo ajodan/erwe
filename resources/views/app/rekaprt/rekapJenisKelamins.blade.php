@@ -25,16 +25,16 @@
                                 </tr>
                                 <tr>
                                     <th>Laki-Laki</th>
-                                    <th class="text-center">{{ $data_rt->where("jenis_kelamin", "Laki-Laki")->count() }}</th>
+                                    <th class="text-center">{{ $data_laki->jumlah }}</th>
                                 </tr>
                                 <tr>
                                     <th>Perempuan</th>
-                                    <th class="text-center">{{ $data_rt->where("jenis_kelamin", "Perempuan")->count() }}</th>
+                                    <th class="text-center">{{ $data_perempuan->jumlah }}</th>
                                 </tr>
                                
                                 <tr>
                                     <th><b>Jumlah Keseluruhan</b></th>
-                                          <th class="text-center"><b>{{ $data_rt->where("jenis_kelamin", "Laki-Laki")->count() + $data_rt->where("jenis_kelamin", "Perempuan")->count() }}</b></th>
+                                          <th class="text-center"><b>{{ $data_laki->jumlah + $data_perempuan->jumlah }}</b></th>
                                     </tr>
                             </table>
                         </div>
@@ -56,6 +56,8 @@
             </div>
         </div>
     </section>
+    {{-- <h4 class="header-title" align="center">Jumlah Warga Menurut Jenis Kelamin</h4>
+    <canvas id="jeniskelaminChart" class="chartjs" width="undefined" height="undefined"></canvas><br><br> --}}
 </div>
 @endsection
 
@@ -80,7 +82,28 @@
 
     $('#imageDataDiri')
 </script>
-
+<script type="text/javascript">
+    var ctx = document.getElementById("jeniskelaminChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: <?php echo json_encode($label); ?>,
+        datasets: [{
+        label: 'Jumlah Warga',
+        backgroundColor: '#12ad6a',
+        borderColor: '#93C3D2',
+        data: <?php echo json_encode($jumlah_jeniskel); ?>
+        }],
+        options: {
+    animation: {
+        onProgress: function(animation) {
+            progress.value = animation.animationObject.currentStep / animation.animationObject.numSteps;
+        }
+      }
+    }
+   },
+ });
+</script>
 
 @include('layouts.alerts.notif')
 @endsection

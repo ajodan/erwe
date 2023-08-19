@@ -27,7 +27,7 @@
                                 <tr>
                                     <th>Tetap</th>
                                     <?php 
-                                    $jmlTetap = $data_rt->where("status_ktp", "Tetap")->count();
+                                    $jmlTetap = $data_tetap->jumlah;
                                     ?>
                                     <th class="text-center">{{ $jmlTetap }}</th>
                                    
@@ -35,7 +35,7 @@
                                 <tr>
                                     <th>Belum Tetap</th>
                                     <?php 
-                                    $jmlBelumTetap = $data_rt->where("status_ktp", "Belum Tetap")->count();
+                                    $jmlBelumTetap = $data_belumtetap->jumlah;
                                     ?>
                                     <th class="text-center">{{ $jmlBelumTetap }}</th>
                                 </tr>
