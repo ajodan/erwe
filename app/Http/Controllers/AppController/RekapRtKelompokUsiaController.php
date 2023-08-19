@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Hash;
 use Str;
 
-use\App\Model\Datadiri;
+use App\Model\Datadiri;
 
 use Illuminate\Support\Facades\Auth;
 

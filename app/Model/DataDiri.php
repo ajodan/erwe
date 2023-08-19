@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class DataDiri extends Model
 {
+
+    protected $table = "data_diris";
+
     public function Keluarga()
     {
         return $this->belongsTo('App\Model\StatusKeluarga', 'keluarga_id');
