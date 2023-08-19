@@ -8,8 +8,10 @@ use Illuminate\Support\Facades\DB;
 
 use Hash;
 use Str;
+use Cache;
+use Session;
 
-use App\Model\Datadiri;
+use App\Model\DataDiri;
 
 use Illuminate\Support\Facades\Auth;
 
