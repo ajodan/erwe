@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Charts\\WargaChart' => $baseDir . '/app/Charts/WargaChart.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Exports\\DataKeluargaExport' => $baseDir . '/app/Exports/DataKeluargaExport.php',
@@ -44,8 +45,15 @@ return array(
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'App\\Http\\Controllers\\BeritaController' => $baseDir . '/app/Http/Controllers/BeritaController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\DataAgamaController' => $baseDir . '/app/Http/Controllers/DataAgamaController.php',
+    'App\\Http\\Controllers\\DataDomisiliController' => $baseDir . '/app/Http/Controllers/DataDomisiliController.php',
+    'App\\Http\\Controllers\\DataJenisKelaminController' => $baseDir . '/app/Http/Controllers/DataJenisKelaminController.php',
+    'App\\Http\\Controllers\\DataKkController' => $baseDir . '/app/Http/Controllers/DataKkController.php',
+    'App\\Http\\Controllers\\DataPendidikanController' => $baseDir . '/app/Http/Controllers/DataPendidikanController.php',
+    'App\\Http\\Controllers\\DataWilayahController' => $baseDir . '/app/Http/Controllers/DataWilayahController.php',
     'App\\Http\\Controllers\\GaleriController' => $baseDir . '/app/Http/Controllers/GaleriController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\UserChartController' => $baseDir . '/app/Http/Controllers/UserChartController.php',
     'App\\Http\\Controllers\\WelcomeController' => $baseDir . '/app/Http/Controllers/WelcomeController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\AdministratorAuth' => $baseDir . '/app/Http/Middleware/AdministratorAuth.php',
@@ -4175,6 +4183,7 @@ return array(
     'PhpParser\\PrettyPrinterAbstract' => $vendorDir . '/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php',
     'PhpParser\\PrettyPrinter\\Standard' => $vendorDir . '/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php',
     'PhpToken' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
+    'Psr\\Clock\\ClockInterface' => $vendorDir . '/psr/clock/src/ClockInterface.php',
     'Psr\\Container\\ContainerExceptionInterface' => $vendorDir . '/psr/container/src/ContainerExceptionInterface.php',
     'Psr\\Container\\ContainerInterface' => $vendorDir . '/psr/container/src/ContainerInterface.php',
     'Psr\\Container\\NotFoundExceptionInterface' => $vendorDir . '/psr/container/src/NotFoundExceptionInterface.php',

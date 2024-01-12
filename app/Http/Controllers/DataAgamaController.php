@@ -27,75 +27,75 @@ class DataAgamaController extends Controller
      */
     public function index()
     {
-        $data_rt1_islam = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and agama_id='1' and status_dasar='hidup'"))->first();
-        $data_rt2_islam = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and agama_id='1' and status_dasar='hidup'"))->first();
-        $data_rt3_islam = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and agama_id='1' and status_dasar='hidup'"))->first();
-        $data_rt4_islam = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and agama_id='1' and status_dasar='hidup'"))->first();
+        $data_rt1_islam = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and agama_id='1' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt2_islam = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and agama_id='1' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt3_islam = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and agama_id='1' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt4_islam = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and agama_id='1' and kk_id='1' and status_dasar='hidup'"))->first();
 
-        $data_rt1_kristen = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and agama_id='2' and status_dasar='hidup'"))->first();
-        $data_rt2_kristen = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and agama_id='2' and status_dasar='hidup'"))->first();
-        $data_rt3_kristen = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and agama_id='3' and status_dasar='hidup'"))->first();
-        $data_rt4_kristen = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and agama_id='2' and status_dasar='hidup'"))->first();
+        $data_rt1_kristen = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and agama_id='2' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt2_kristen = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and agama_id='2' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt3_kristen = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and agama_id='3' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt4_kristen = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and agama_id='2' and kk_id='1' and status_dasar='hidup'"))->first();
 
-        $data_rt1_katholik = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and agama_id='3' and status_dasar='hidup'"))->first();
-        $data_rt2_katholik = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and agama_id='3' and status_dasar='hidup'"))->first();
-        $data_rt3_katholik = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and agama_id='3' and status_dasar='hidup'"))->first();
-        $data_rt4_katholik = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and agama_id='3' and status_dasar='hidup'"))->first();
+        $data_rt1_katholik = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and agama_id='3' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt2_katholik = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and agama_id='3' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt3_katholik = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and agama_id='3' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt4_katholik = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and agama_id='3' and kk_id='1' and status_dasar='hidup'"))->first();
 
-        $data_rt1_hindu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and agama_id='4' and status_dasar='hidup'"))->first();
-        $data_rt2_hindu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and agama_id='4' and status_dasar='hidup'"))->first();
-        $data_rt3_hindu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and agama_id='4' and status_dasar='hidup'"))->first();
-        $data_rt4_hindu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and agama_id='4' and status_dasar='hidup'"))->first();
+        $data_rt1_hindu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and agama_id='4' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt2_hindu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and agama_id='4' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt3_hindu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and agama_id='4' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt4_hindu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and agama_id='4' and kk_id='1' and status_dasar='hidup'"))->first();
 
-        $data_rt1_budha = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and agama_id='5' and status_dasar='hidup'"))->first();
-        $data_rt2_budha = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and agama_id='5' and status_dasar='hidup'"))->first();
-        $data_rt3_budha = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and agama_id='5' and status_dasar='hidup'"))->first();
-        $data_rt4_budha = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and agama_id='5' and status_dasar='hidup'"))->first();
+        $data_rt1_budha = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and agama_id='5' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt2_budha = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and agama_id='5' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt3_budha = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and agama_id='5' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt4_budha = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and agama_id='5' and kk_id='1' and status_dasar='hidup'"))->first();
 
-        $data_rt1_konghucu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and agama_id='6' and status_dasar='hidup'"))->first();
-        $data_rt2_konghucu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and agama_id='6' and status_dasar='hidup'"))->first();
-        $data_rt3_konghucu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and agama_id='6' and status_dasar='hidup'"))->first();
-        $data_rt4_konghucu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and agama_id='6' and status_dasar='hidup'"))->first();
+        $data_rt1_konghucu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and agama_id='6' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt2_konghucu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and agama_id='6' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt3_konghucu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and agama_id='6' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt4_konghucu = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and agama_id='6' and kk_id='1' and status_dasar='hidup'"))->first();
 
-        $data_rt1_kepercayaan = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and agama_id='7' and status_dasar='hidup'"))->first();
-        $data_rt2_kepercayaan = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and agama_id='7' and status_dasar='hidup'"))->first();
-        $data_rt3_kepercayaan = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and agama_id='7' and status_dasar='hidup'"))->first();
-        $data_rt4_kepercayaan = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and agama_id='7' and status_dasar='hidup'"))->first();
+        $data_rt1_kepercayaan = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='1' and agama_id='7' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt2_kepercayaan = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='2' and agama_id='7' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt3_kepercayaan = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='3' and agama_id='7' and kk_id='1' and status_dasar='hidup'"))->first();
+        $data_rt4_kepercayaan = collect(DB::SELECT("SELECT count(id) as jumlah from data_diris where rt='4' and agama_id='7' and kk_id='1' and status_dasar='hidup'"))->first();
 
         $label = ["RT 01", "RT 02", "RT 03", "RT 04"];
 
         for ($rt = 1; $rt < 5; $rt++) {
-            $chart_islam     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and agama_id='1' and status_dasar='hidup'"))->first();
+            $chart_islam     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and agama_id='1' and kk_id='1' and status_dasar='hidup'"))->first();
             $jumlah_islam[] = $chart_islam->jumlah;
         }
 
         for ($rt = 1; $rt < 5; $rt++) {
-            $chart_kristen     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and agama_id='2' and status_dasar='hidup'"))->first();
+            $chart_kristen     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and agama_id='2' and kk_id='1' and status_dasar='hidup'"))->first();
             $jumlah_kristen[] = $chart_kristen->jumlah;
         }
 
         for ($rt = 1; $rt < 5; $rt++) {
-            $chart_katolik     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and agama_id='3' and status_dasar='hidup'"))->first();
+            $chart_katolik     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and agama_id='3' and kk_id='1' and status_dasar='hidup'"))->first();
             $jumlah_katholik[] = $chart_katolik->jumlah;
         }
 
         for ($rt = 1; $rt < 5; $rt++) {
-            $chart_hindu     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and agama_id='4' and status_dasar='hidup'"))->first();
+            $chart_hindu     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and agama_id='4' and kk_id='1' and status_dasar='hidup'"))->first();
             $jumlah_hindu[] = $chart_hindu->jumlah;
         }
 
         for ($rt = 1; $rt < 5; $rt++) {
-            $chart_budha     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and agama_id='5' and status_dasar='hidup'"))->first();
+            $chart_budha     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and agama_id='5' and kk_id='1' and status_dasar='hidup'"))->first();
             $jumlah_budha[] = $chart_budha->jumlah;
         }
 
         for ($rt = 1; $rt < 5; $rt++) {
-            $chart_konghucu     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and agama_id='6' and status_dasar='hidup'"))->first();
+            $chart_konghucu     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and agama_id='6' and kk_id='1' and status_dasar='hidup'"))->first();
             $jumlah_konghucu[] = $chart_konghucu->jumlah;
         }
 
         for ($rt = 1; $rt < 5; $rt++) {
-            $chart_kepercayaan     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and agama_id='7' and status_dasar='hidup'"))->first();
+            $chart_kepercayaan     = collect(DB::SELECT("SELECT count(id) AS jumlah from data_diris where rt='$rt' and agama_id='7' and kk_id='1' and status_dasar='hidup'"))->first();
             $jumlah_kepercayaan[] = $chart_kepercayaan->jumlah;
         }
 

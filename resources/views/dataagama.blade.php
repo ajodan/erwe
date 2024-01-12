@@ -23,7 +23,7 @@
           </div>
           <div class="col-md-12 col-lg-12">
             <div class="card-header bg bg-light">
-                <h4 align="center"><b>Tabel Warga RW 13 Menurut Agama Berdasarkan Wilayah</b></h4>
+                <h4 align="center"><b>Tabel Warga RW 13 Menurut Agama Per Kepala Keluarga Berdasarkan Wilayah</b></h4>
                 <div class="card-header-action">
                     {{-- <img class="img-fluid mt-1 img-shadow"
                         src="{{asset('assets/stisla/modules/flag-icon-css/flags/4x3/id.svg')}}" alt="image"

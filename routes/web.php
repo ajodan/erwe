@@ -64,6 +64,7 @@ Route::get('/dataagama', 'DataAgamaController@index', function () {
     return view('dataagama');
 })->name('dataagama');
 
+
 Route::get('/datapendidikan', 'DataPendidikanController@index', function () {
     return view('datapendidikan');
 })->name('datapendidikan');
