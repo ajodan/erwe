@@ -97,6 +97,14 @@
             </li>
 
             @endif
+
+            @if (auth()->user()->level == 'KPPS')
+            <li class="dropdown" id="dataDiriLink">
+                <a href="{{ route('data_diris.index') }}" class="nav-link">
+                    <i class="fas fa-address-card"></i> <span>Data Warga</span>
+                </a>
+            </li>
+            @endif
             @if (auth()->user()->level == 'Sekretaris')
             <li class="dropdown" id="dataDiriLink">
                 <a href="{{ route('data_diris.index') }}" class="nav-link">

@@ -80,6 +80,7 @@
                                     <option value="Bendahara">Bendahara</option>
                                     <option value="Warga">Warga</option>
                                     <option value="Rw">RW</option>
+                                    <option value="KPPS">KPPS</option>
                                 </select>
                             </div>
                         </div>

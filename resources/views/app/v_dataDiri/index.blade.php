@@ -7,7 +7,7 @@
       <h1>Data Warga</h1>
 
       <div class="section-header-button">
-        @if (Auth::user()->level != 'Rw')
+        @if (Auth::user()->level != 'KPPS')
           <a href="{{ route('data_diris.create') }}">
             <h4 class="btn btn-info ">Tambah Data Warga</h4>
           </a>
@@ -26,9 +26,11 @@
         <div class="col-12">
             <div class="card-body">
               <div class="table-responsive">
+                @if (Auth::user()->level != 'KPPS')
                 <a href="{{ route('datadiris.export') }}">
                   <h2 class="btn btn-primary">Cetak Data Warga Excel</h2>
                 </a>
+                @endif
                 <table class="table table-striped" id="table-1">
                   <thead>
                     <tr>
@@ -69,7 +71,7 @@
                       @endif
                       <td class="text-center">{{ $res->tgl_keluar_kk }}</td>
                       <td class="text-center">
-                        @if (Auth::user()->level != 'Rw')
+                        @if (Auth::user()->level != 'KPPS')
                           <a href="{{ route('data_diris.show', $res->id) }}" class="btn btn-info"><i class="fas fa-eye"></i></a>
                           <a href="{{ route('data_diris.edit', $res->id) }}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                           <button href="#" class="btn btn-danger" data-uri="{{ route('data_diris.destroy', $res->id) }}" data-toggle="modal" data-target="#deleteConf"><i class="fas fa-trash"></i></button>

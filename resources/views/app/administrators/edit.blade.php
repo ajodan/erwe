@@ -75,7 +75,7 @@
                             <div class="form-group col-md-4">
                                 <label>Level</label>
                                 <select class="form-control selectric" name="level">
-                                    <?php $level = ['Administrator','Ketua','Sekretaris','Warga','Bendahara','Rw']; ?>
+                                    <?php $level = ['Administrator','Ketua','Sekretaris','Warga','Bendahara','Rw','KPPS']; ?>
                                     @foreach($level as $key)
                                     @if($administrators->level == $key)
                                     <option value="{{ $key }}" selected> {{ $key }} </option>

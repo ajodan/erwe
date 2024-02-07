@@ -9,6 +9,7 @@ use App\Model\Artikel;
 use App\Model\Galeri;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 
 class WelcomeController extends Controller
 {

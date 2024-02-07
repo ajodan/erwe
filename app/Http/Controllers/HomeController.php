@@ -41,7 +41,21 @@ class HomeController extends Controller
             // JenjangPendidikan
             $d['agamas'] = DataDiri::select('agama_id')->get();
             // wargaJenisKelamin
-            $d['jenis_kelamins']   = DataDiri::select('tanggal_lahir', 'jenis_kelamin')->get();
+            $d['jenis_kelamins'] = DataDiri::select('tanggal_lahir', 'jenis_kelamin')->get();
+        }  else if (Auth::user()->level == 'KPPS') {
+            // Home
+            $rt = Auth::user()->rt;
+            $d['rt'] = Auth::user()->rt;
+            $d['pengguna'] = User::All();
+            $d['data_diris'] = DataDiri::All();
+            $d['kartu_keluargas'] = DataDiri::select('no_kk')->groupBy('no_kk')->get();
+            $d['KepalaKeluargaCount'] = DataDiri::where('kk_id', 1)->count();
+            // JenjangPendidikan
+            $d['pendidikans'] = DataDiri::select('pendidikan_id')->get();
+            // JenjangPendidikan
+            $d['agamas'] = DataDiri::select('agama_id')->get();
+            // wargaJenisKelamin
+            $d['jenis_kelamins'] = DataDiri::select('tanggal_lahir', 'jenis_kelamin')->get();
         } else {
             // Home
             $rt = Auth::user()->rt;
@@ -55,7 +69,7 @@ class HomeController extends Controller
             // JenjangPendidikan
             $d['agamas'] = DataDiri::select('agama_id')->where('rt', $rt)->get();
             // wargaJenisKelamin
-            $d['jenis_kelamins']   = DataDiri::select('tanggal_lahir', 'jenis_kelamin')->where('rt', $rt)->get();
+            $d['jenis_kelamins'] = DataDiri::select('tanggal_lahir', 'jenis_kelamin')->where('rt', $rt)->get();
         }
 
         return view('home', $d);

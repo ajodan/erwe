@@ -35,6 +35,11 @@ class DataDiriController extends Controller
                 ->join('status_kartu_keluargas', 'status_kartu_keluargas.id', '=', 'data_diris.kk_id')
                 ->select('data_diris.*', 'pendidikans.jenjang', 'status_kartu_keluargas.hub_kk')
                 ->orderBy('data_diris.no_rumah', 'ASC')->get();
+        } else if (Auth::user()->level == 'KPPS') {
+            $d['data_diris'] = DataDiri::join('pendidikans', 'pendidikans.id', '=', 'data_diris.pendidikan_id')
+                ->join('status_kartu_keluargas', 'status_kartu_keluargas.id', '=', 'data_diris.kk_id')
+                ->select('data_diris.*', 'pendidikans.jenjang', 'status_kartu_keluargas.hub_kk')
+                ->orderBy('data_diris.no_rumah', 'ASC')->get();
         } else {
             $rt = Auth::user()->rt;
             $d['data_diris'] = DataDiri::join('pendidikans', 'pendidikans.id', '=', 'data_diris.pendidikan_id')

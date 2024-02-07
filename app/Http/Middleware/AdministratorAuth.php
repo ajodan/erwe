@@ -28,6 +28,8 @@ class AdministratorAuth
                 return $next($request);
             } else if (\Auth::user()->level == "Rw") {
                 return $next($request);
+            } else if (\Auth::user()->level == "KPPS") {
+                return $next($request);
             } else {
                 \Auth::logout();
                 return redirect('/login')->with("alertUser", "....");
